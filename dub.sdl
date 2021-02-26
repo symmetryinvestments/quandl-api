@@ -1,0 +1,22 @@
+name "quandl"
+description "D code to access quandl"
+copyright "Copyright © 2015, Laeeth Isharc and Kaleidic Associates Advisory Limited"
+authors "Laeeth Isharc"
+dependency "vibe-d:data" version="~master"
+dependency "kaleidic-api:snappyd" version="*"
+targetType "library"
+
+configuration "library" {
+}
+
+configuration "libraryStdDataJson" {
+    dependency "std_data_json" version="~>0.18.2"
+    versions "StdDataJson"
+}
+
+configuration "unittest" {
+	targetType "executable"
+    dependency "unit-threaded" version="*"
+    mainSourceFile "ut.d"
+    versions "KaleidicApiQuandlTest" "KaleidicDatesNoStaticCtor"
+}
